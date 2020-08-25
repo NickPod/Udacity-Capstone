@@ -10,7 +10,7 @@ setup:
 
 source:
 	# Source virtualenv
-	source ~./.capstone/bin/activate
+	. ~/.capstone/bin/activate
 
 install:
 	# Run from inside virtualenv, installs dependencies
