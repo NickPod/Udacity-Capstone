@@ -11,7 +11,7 @@ pipeline{
 
         stage('Build Container'){
             steps{
-                docker build -f Dockerfile . -t udacity/udacity-capstone --label capstoneapp
+                docker build -f Dockerfile -t udacity/udacity-capstone --label capstoneapp .
             }
         }
 
