@@ -17,10 +17,8 @@ The pipeline runs through 4 steps to deploy updated images into the cluster.
 4. Deploy Image to EKS - Using a rolling deployment, the image is pushed to your cluster.
 
 # Key Files
-`
-1. Jenkinsfile - Defines the pipeline Jenkins will use for this project
-2. Dockerfile - Defines how the container image is built.
-3. index.html - HTML file to be served by the container
-4. deploy.yml - YAML file defining the kubernetes deployment of the project. Deploys both the pods containing the web servers as well as the load balancer service they sit behind.
-5. run_docker.sh - A shell script useful to create the docker image locally during development.
-`
+1. **Jenkinsfile** - Defines the pipeline Jenkins will use for this project
+2. **Dockerfile** - Defines how the container image is built.
+3. **index.html** - HTML file to be served by the container
+4. **deploy.yml** - YAML file defining the kubernetes deployment of the project. Deploys both the pods containing the web servers as well as the load balancer service they sit behind.
+5. **run_docker.sh** - A shell script useful to create the docker image locally during development.
