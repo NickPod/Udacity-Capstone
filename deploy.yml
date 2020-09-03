@@ -33,9 +33,10 @@ spec:
       containers:
         - image: 884552403086.dkr.ecr.us-east-1.amazonaws.com/udacity/udacity-capstone:latest
           name: capstone-udacity
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
-        - imagePullPolicy: Always
+          
   strategy:
     rollingUpdate:
       maxSurge: 25%
