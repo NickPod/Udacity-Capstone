@@ -36,6 +36,14 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+            timeoutSecond: 5
+            successThreshold: 1
+            failureThreshold: 3
           
   strategy:
     rollingUpdate:
