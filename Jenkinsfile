@@ -27,5 +27,17 @@ pipeline{
                 
             }
         }
+
+        stage('Deploy pods to EKS'){
+            steps{
+                withAWS(credentials: 'AWS_Credentials', region: 'us-east-1'){
+                    sh '''
+                        aws eks --region us-east-1 update-kubeconfig --name capstonecluster
+                        kubectl config use-context arn:aws:eks:us-east-1:884552403086:cluster/capstonecluster
+                        kubectl apply -f deploy.yml
+                    '''
+                }
+            }
+        }
     }
 }
