@@ -35,6 +35,7 @@ pipeline{
                         aws eks --region us-east-1 update-kubeconfig --name capstonecluster
                         kubectl config use-context arn:aws:eks:us-east-1:884552403086:cluster/capstonecluster
                         kubectl apply -f deploy.yml
+                        kubectl rollout restart deployment capstone-udacity
                     '''
                 }
             }
